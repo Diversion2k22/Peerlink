@@ -2,7 +2,13 @@ import React from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 
 export default function Navbar(props) {
+
+    const auth = localStorage.getItem('user');
     const navigate = useNavigate();
+    const logout = () =>{
+        localStorage.clear();
+        navigate('login');
+    }
     const setNav = () => {
         switch (props.val) {
             case "Login/Signup":
@@ -35,8 +41,9 @@ export default function Navbar(props) {
                        
                     </ul>
                     <div className="navLeft">
-                        <button className='butt' onClick={setNav}>{props.val}</button>
-                        <img src="" alt="" />
+                        { auth ? <><button className='butt' onClick={logout}>Logout</button><img src="" alt="" /></> :
+                        <><button className='butt' onClick={setNav}>{props.val}</button><img src="" alt="" /></>}
+                        
                     </div>
                 </nav>
             
