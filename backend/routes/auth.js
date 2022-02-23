@@ -70,15 +70,21 @@ router.post("/login", async (req,res)=>{
 
     //    res.cookie("authtoken",token);
 
+        
 
         if(isMatch){
-            res.json({message:"sign in successfull!"})
+            res.json({
+                message:"sign in successfull!",
+                user: userInfo
+            })
         }else{
-            res.json({error:"password Incorrect"})
+            alert("password incorrect!!")
+            res.json({message: "password Incorrect"})
         }
 
    }else{
-       res.json({ message: "please register first"})
+        alert("please register first")
+        res.json({ message: "please register first"})
    }
 
 })
