@@ -10,7 +10,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <Navbar val="Login/Signup"/>
+    <Navbar val="Login"/>
     <Routes>
 
       <Route element={<PrivateComponent/>}>
