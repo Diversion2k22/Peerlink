@@ -15,7 +15,7 @@ export default function Navbar(props) {
                 navigate('/login')
                 break;
 
-            case "Log In":
+            case "Login":
                 navigate('/login')
                 break;
 
