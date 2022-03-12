@@ -35,7 +35,18 @@ const defSchema = new mongoose.Schema({
             required: true, 
            } 
         }
-    ]
+    ],
+    pic: {
+        type: "String",
+        required: true,
+        default:
+          "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
+    },
+    isAdmin: {
+         type: Boolean,
+        required: true,
+        default: false,
+    }
     
 
 })
@@ -63,5 +74,5 @@ defSchema.methods.generateAuthToken = async function(){
 }
 
 
-const User = mongoose.model('user',defSchema);
+const User = mongoose.model('User',defSchema);
 module.exports = User;
