@@ -1,37 +1,15 @@
 const express = require('express');
-const Conversation = require('../model/Conversation');
+const { accessChat, fetchChats, createGroupChat, renameGroup, addToGroup, removeFromGroup } = require('../controllers/conversationControllers');
 const router = express.Router();
 
-//new conversation
+//=====Routes=====
 
-router.post("/", async (req, res) => {
-    const newConversation = new Conversation({
-        members: [req.body.senderId, req.body.receiverId]
-    });
-
-    try{
-        const savedConversation = await newConversation.save();
-        res.status(200).json(savedConversation);
-    } catch(err){
-        res.status(500).json(err);
-    }
-});
-
-// get conversation
-
-router.get("/:userId", async (req, res) => {
-    try {
-      const conversation = await Conversation.find({
-        members: { $in: [req.params.userId] },
-      });
-      res.status(200).json(conversation);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-});
-
-// =========================
-
+router.route("/:userId").post(accessChat);
+router.route("/:userId").get(fetchChats);
+router.route("/group/:userId").post(createGroupChat);
+router.route("/rename").put(renameGroup);
+router.route("/groupremove").put(removeFromGroup);
+router.route("/groupadd").put(addToGroup);
 
 
 module.exports = router;
