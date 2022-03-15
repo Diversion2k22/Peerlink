@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const MessageSchema = new mongoose.Schema({
+const MessageSchema = mongoose.Schema({
         sender: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
         },
-        text: {
+        content: {
             type: String,
             trim: true
         },
