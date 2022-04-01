@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
+
 
 export default function Glassform() {
 
@@ -8,7 +8,9 @@ export default function Glassform() {
   const [password, setPassword]= React.useState('');
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    // e.preventDefault();
+    console.log("okk");
     console.warn("email,password", email, password)
     let result = await fetch('/auth/login', {
       method:'post',
@@ -21,6 +23,7 @@ export default function Glassform() {
     console.warn(result);
     if (result.user){
       localStorage.setItem("user", JSON.stringify(result.user));
+      
       navigate("/chat");
     }
   }
@@ -48,14 +51,14 @@ export default function Glassform() {
               <div className="glass" ></div>
 
             <p className="para1">Log In</p>
-            <form action="#">
+            <form action="#" autoComplete="off">
               <div className="inp">
               <input type="text" placeholder="Phone or Email" 
               onChange={(e) => setEmail(e.target.value)} value={email}/>
               </div>
               <div className="inp">
               <input type="password" placeholder="Password" 
-              onChange={(e) => setPassword(e.target.value)} value={password}/>
+              onChange={(e) => setPassword(e.target.value )} value={password} />
               </div>
               <div className="inp but" onClick={handleLogin}>
               <input type="submit" value="Log In"/>

@@ -1,0 +1,64 @@
+.mycontact{
+ 
+    height: 96%;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 35px 45px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px;
+    border-radius: 12px;
+    flex-grow: 2;
+    padding-top: 10px;
+    /* color: rgba(227, 241, 33, 0.986); */
+   
+   }
+
+   .mychat{
+  
+    height: 69vh;
+    flex-grow: 6;
+    display: flex;
+    box-shadow: 0 35px 45px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px;
+    
+    border-radius: 12px;
+    /* justify-content: center; */
+    /* align-items: center; */
+
+  }
+  .search{
+    
+    display: block;
+    margin: auto;
+      height: 40px;
+      width: 95%;
+      background-color: rgba(0, 0, 0, 0);
+      /* border:1px solid rgb(240, 240, 240); */
+      outline: none;
+      border-radius: 8px;
+      box-shadow: 0px -4px 4px -2px rgba(0, 0, 0, 0.404),
+                  4px 4px 4px rgba(0, 0, 0, 0.404);
+      text-align: center;
+  }
+  .search::placeholder{
+    color: white;
+  }
+  .adduser{
+    flex-grow: 2;
+  }
+  .adduser1{
+    flex-grow: 6;
+  }
+  .set2{
+    height: 81vh;
+    background-image:linear-gradient(90deg,rgb(25,127,129),rgb(154, 245, 129));
+    /* padding: 0px 80px; */
+    /* margin: 0px 80px; */
+  }
