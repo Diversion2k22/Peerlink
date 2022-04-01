@@ -9,7 +9,7 @@ export default function Glassform() {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log("okk");
     console.warn("email,password", email, password)
     let result = await fetch('/auth/login', {
@@ -51,14 +51,14 @@ export default function Glassform() {
               <div className="glass" ></div>
 
             <p className="para1">Log In</p>
-            <form action="#">
+            <form action="#" autoComplete="off">
               <div className="inp">
               <input type="text" placeholder="Phone or Email" 
               onChange={(e) => setEmail(e.target.value)} value={email}/>
               </div>
               <div className="inp">
               <input type="password" placeholder="Password" 
-              onChange={(e) => setPassword(e.target.value)} value={password}/>
+              onChange={(e) => setPassword(e.target.value )} value={password} />
               </div>
               <div className="inp but" onClick={handleLogin}>
               <input type="submit" value="Log In"/>

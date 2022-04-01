@@ -10,7 +10,7 @@ import { BellIcon,ChevronDownIcon } from '@chakra-ui/icons'
 import ProfileModal from './ProfileModal';
 import ChatLoading from './ChatLoading';
 import UserListItem from './UserListItem';
-import ChatProvider from '../../Context/ChatProvider';
+// import ChatProvider from '../../Context/ChatProvider';
 import { ChatContext } from '../../Context/ChatProvider';
 const axios = require('axios');
 

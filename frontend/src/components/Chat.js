@@ -6,7 +6,7 @@ import SideDrawer from './chatcomp/SideDrawer';
 
 function Chat() {
 
-    // const {user} = ChatState();
+
     
   return (
     <>
